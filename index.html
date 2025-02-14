@@ -20,23 +20,6 @@
             position: relative;
         }
 
-        /* Floating Flowers */
-        .flower {
-            position: absolute;
-            width: 80px;
-            height: 80px;
-            background: url('https://i.imgur.com/9j6lPj2.png') no-repeat center;
-            background-size: contain;
-            opacity: 0.7;
-            animation: floatFlowers 6s infinite ease-in-out alternate;
-        }
-
-        @keyframes floatFlowers {
-            0% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
-            50% { transform: translateY(-20px) rotate(10deg); opacity: 1; }
-            100% { transform: translateY(0px) rotate(-10deg); opacity: 0.8; }
-        }
-
         /* Envelope Container */
         .envelope-container {
             position: relative;
@@ -184,22 +167,6 @@
     </style>
 </head>
 <body>
-
-    <!-- Floating Flowers -->
-    <script>
-        function createFlowers() {
-            for (let i = 0; i < 12; i++) {
-                let flower = document.createElement("div");
-                flower.className = "flower";
-                flower.style.left = Math.random() * 100 + "vw";
-                flower.style.top = Math.random() * 100 + "vh";
-                flower.style.animationDuration = (3 + Math.random() * 4) + "s";
-                document.body.appendChild(flower);
-            }
-        }
-        createFlowers();
-    </script>
-
     <div class="envelope-container" onclick="toggleEnvelope()">
         <!-- Envelope -->
         <div class="envelope">
@@ -211,7 +178,7 @@
         <div class="wax-seal">💜</div>
 
         <!-- Letter (First Slide) -->
-        <div class="letter">Happy Valentine's Day! 💜</div>
+        <div class="letter">Happy Valentine's Day Chelle ! 💜</div>
 
         <!-- Second Slide (Quote) -->
         <div class="quote">"Love isn’t just a feeling; it’s the quiet magic that turns ordinary moments into forever memories." 💜</div>
@@ -230,12 +197,11 @@
             } else if (clickCount === 2) {
                 envelope.classList.remove('open', 'show-quote');
                 envelope.classList.add('closed');
-                clickCount = -1;  
+                clickCount = -1;
             }
 
             clickCount++;
         }
     </script>
-
 </body>
 </html>
